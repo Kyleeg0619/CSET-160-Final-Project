@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="teacher_container">
+    <div class="user_info">
+        <img src="{{url_for('static',filename='images/user-icon.png')}}" alt="" id="user-icon">
+        <ul>
+            <h1>User Info</h1>
+            <li style="font-weight: bold;margin-top: 10px;">Educator</li>
+            <li>Username: {{ session['username'] }}</li>
+        </ul>
+    </div>
+
+    <div class="tests">
+        <h1>Created Tests</h1>
+        <hr class="home-spacer">
+        {% for test in tests %}
+        <ul class="test">
+            <li>Title: {{ test['title'] }}</li> <!-- Access by index if using tuples -->
+            <li>Creator: {{ test['username'] }}</li> <!-- Access by index -->
+            <li>Created At: {{ test['created_at'] }}</li> <!-- Access by index -->
+        </ul>
+        {% endfor %}
+    </div>
+
+    <div class="teacher_dashboard">
+        <h1>Teacher Dashboard</h1>
+        <hr class="home-spacer">
+        <a href="{{ url_for('create_test') }}">Create Test</a>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

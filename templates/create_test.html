@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="create_test">
+        <h1>Create A Test!</h1>
+        <form action="{{ url_for('create_test') }}" method="POST" class="create_test">
+            <div class="test-title">
+                <label for="title">Test Title: </label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            {% for i in range(1, 11) %}
+                <div class="question-block">
+                    <label for="q{{ i }}">Question {{ i }}:</label>
+                    <input type="text" id="q{{ i }}" name="q{{ i }}" placeholder="Enter question text..." required>
+
+                        <label for="a{{ i }}">Answer {{ i }}:</label>
+                        <input type="text" id="q{{ i }}" for="q{{ i }}" name="a{{ i }}" placeholder="Enter answer text..." required>
+                </div>
+            {% endfor %}
+
+            <button type="submit" id="submit">Create Test</button>
+        </form>
+    </div>
+    {% endblock %}

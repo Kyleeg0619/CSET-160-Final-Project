@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="accounts">
+        <h1>Account Database</h1>
+
+        {% for account in accounts %}
+        <div class="account">
+            <ul>
+                <li>Username: {{account['username']}}</li>
+                <li>Education Status: {{account['education_status']}}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock%}

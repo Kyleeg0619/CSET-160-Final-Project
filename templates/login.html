@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <form action="{{ url_for('login') }}" method="post" class="login_register">
+<h1>Login</h1>
+<hr class="home-spacer">
+
+        <label for="Username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+
+        <label for="Password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Login" id="register">
+
+        <a href="{{ url_for('index') }}" id="login">Back to Home</a>
+    </form>
+    {% endblock %}

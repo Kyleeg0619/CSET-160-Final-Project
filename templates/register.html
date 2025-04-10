@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <form action="{{ url_for('register') }}" method="post" class="login_register">
+<h1>Register</h1>
+
+        <div class="select">
+            <hr class="home-spacer">
+            <label for="status">
+                <i class="fas fa-user">Are you an Educator?</i>
+            </label>
+            <select name="status" id="status_dropdown">
+                <option value="Teacher">Teacher</option>
+                <option value="Student">Student</option>
+            </select>
+        </div>
+
+        <label for="Username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+
+        <label for="Password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Register" id="register">
+
+        <a href="{{ url_for('login') }}" id="login">Login</a>
+    </form>
+    {% endblock %}

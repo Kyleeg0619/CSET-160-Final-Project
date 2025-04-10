@@ -1,0 +1,23 @@
+*** CSET-160 Final Project ***
+Build an 'Online Exam Management' platform. It should have the following features -
+
+-- Account Management --
+* User *
+    ✔️- user account == student AND teacher
+    ✔️- add a register page where new accounts can be created
+    
+    ~ Teacher & Student ~
+    - can create, edit, and delete tests
+    - tests have a series of open ended questions.
+    - students will be provided with text boxes to answer to each question
+    - each test is assigned to ONE teacher
+    - tests have unlimited time
+    - create a tests endpoint that shows all created tests
+        - selecting a test displays a form with all questions
+        - to answer a test user but be student
+        - student may or may not answer all the questions and submit. the response will be recorded.
+        - student can take test only once
+        - user can see all student's response for a particular test.
+        - info ab the test: test name, created by, number of students, students who took the test
+
+    ✔️- create another accounts page which will show all accounts in the system.

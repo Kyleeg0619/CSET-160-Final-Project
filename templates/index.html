@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <section class="home-block">
+        <div class="home-head">
+            <h1>Welcome to Quiz!</h1>
+            <p>"QuizBerry — Fresh quizzes, picked just for you."</p>
+            
+        </div>
+        <div class="infobox">
+            <div class="info-item" id="itm-1">
+                <h1>Register</h1>
+                <p>Ready to test you knowledge?Make an easy to you quiz for you students? Jump and take a bite of the fruit of knowledge!</p>
+                <hr class="home-spacer">
+                <a href="{{ url_for('register') }}" id="register">Sign-up</a>
+            </div>
+            <div class="info-item" id="itm-2">
+                <h1>Login</h1>
+                <p>Already part of the garden? Login to get testing!</p>
+                <hr class="home-spacer">
+                <a href="{{ url_for('login') }}" id="login">Login</a>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
