@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="teacher_container">
+<div class="student_container">
     <div class="user_info">
         <img src="{{url_for('static',filename='images/user-icon.png')}}" alt="" id="user-icon">
         <ul>
             <h1>User Info</h1>
-            <li style="font-weight: bold;margin-top: 10px;">Educator</li>
+            <li style="font-weight: bold;margin-top: 10px;">Student</li>
             <li>Username: {{ session['username'] }}</li>
         </ul>
+        <h2 style="margin-top: 10px;">Scores</h2>
+        {% for s in score %}
+        <ul style="margin-top: 5px;">
+            <li>Test: {{s['title']}}</li>
+            <li>Score: {{s['score']}}/10</li>
+        </ul>
+        {% endfor %}
     </div>
 
     <div class="tests">
-        <h1>Created Tests</h1>
+        <h1>Tests for the picking!</h1>
         <hr class="home-spacer">
         {% for test in tests %}
-        <form method='POST' action="{{url_for('handle_test_action')}}" class="test-form">
+        <form method='POST' action="{{url_for('take_test_action')}}" class="test-form">
             <ul class="test">
+                <img src="{{url_for('static',filename='images/blueberry.png')}}" alt="">
                 <li>Title: {{ test['title'] }}</li> <!-- Access by index if using tuples -->
                 <li>Creator: {{ test['username'] }}</li> <!-- Access by index -->
                 <li>Created At: {{ test['created_at'] }}</li> <!-- Access by index -->
@@ -24,18 +32,11 @@
 
             <input type="hidden" name="test_id" value="{{test['id']}}">
 
-            <button class="test-function" type="submit" name="action" value="modify">Modify</button>
-            <button class="test-function" type="submit" name="action" value="delete">Delete</button>
+            <button class="test-function" type="submit" name="action" value="take_test">Take Test</button>
         </form>
         {% endfor %}
     </div>
-
-    <div class="teacher_dashboard">
-        <h1>Teacher Dashboard</h1>
-        <hr class="home-spacer">
-        <a href="{{ url_for('create_test') }}">Create Test</a>
-        <a href="{{ url_for('index') }}">Back to Home</a>
-    </div>
 </div>
+<a href="{{url_for('tests')}}" class="all-test-link">See All Tests</a>
 
 {% endblock %}

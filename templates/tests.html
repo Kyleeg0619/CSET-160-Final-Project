@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="accounts">
+        <h1>Test Database</h1>
+
+        {% for test in tests %}
+        <ul class="test">
+            <img src="{{url_for('static',filename='images/blueberry.png')}}" alt="">
+            <li>Title: {{ test['title'] }}</li> <!-- Access by index if using tuples -->
+            <li>Creator: {{ test['username'] }}</li> <!-- Access by index -->
+            <li>Created At: {{ test['created_at'] }}</li> <!-- Access by index -->
+        </ul>
+        {% endfor %}
+    </div>
+    {% endblock%}

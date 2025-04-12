@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="create_test">
+        <h1>Modify Test</h1>
+        <form method="POST" action="{{ url_for('submit_modifications', test_id=test.id) }}" class="create_test">
+
+            <div class="test-title">
+                <label for="title">Test Title: </label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            {% for q in questions %}
+                <div class="question-block">
+                    <label>Question {{ loop.index }}:</label>
+                    <input type="text" name="q{{ loop.index }}" value="{{q.question_text}}" required>
+
+                        <label>Answer {{ loop.index }}:</label>
+                        <input type="text" name="a{{ loop.index }}" value="{{q.answer}}" required>
+
+                        <input type="hidden" name="qid{{ loop.index }}" value="{{ q.id }}">
+                </div>
+            {% endfor %}
+            <button type="submit" id="submit">Modify Test</button>
+        </form>
+    </div>
+{% endblock %}

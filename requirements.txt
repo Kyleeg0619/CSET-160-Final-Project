@@ -7,7 +7,10 @@ Build an 'Online Exam Management' platform. It should have the following feature
     ✔️- add a register page where new accounts can be created
     
     ~ Teacher & Student ~
-    - can create, edit, and delete tests
+    - can:
+            ✔️- create
+        - edit
+        - delete
     - tests have a series of open ended questions.
     - students will be provided with text boxes to answer to each question
     - each test is assigned to ONE teacher

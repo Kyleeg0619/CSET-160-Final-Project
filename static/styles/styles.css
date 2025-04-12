@@ -351,7 +351,7 @@ body {
 }
 
 /* Teacher.html */
-.teacher_container {
+.teacher_container, .student_container {
   display: flex;
   align-self: center;
   justify-self: center;
@@ -404,6 +404,27 @@ body {
   min-height: 150px;
 }
 
+.test-form {
+  display: inline-block;
+}
+
+.test-function {
+  display: block;
+  font-family: Quicksand;
+  width: max-content;
+  background: #b79cee;
+  color: var(--navy--);
+  padding: 15px 20px;
+  margin: 10px auto;
+  border-radius: 50px;
+  border: none;
+}
+
+.test img {
+  display: block;
+  width: 100%;
+}
+
 .teacher_dashboard {
   border: solid 3px var(--purple--);
   border-radius: 50px;
@@ -414,7 +435,7 @@ body {
   margin: 10px;
 }
 
-.teacher_dashboard a {
+.teacher_dashboard a, .all-test-link {
   font-family: Quicksand;
   display: block;
   width: max-content;
